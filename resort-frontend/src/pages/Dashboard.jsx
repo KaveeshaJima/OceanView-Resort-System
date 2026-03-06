@@ -13,7 +13,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        // Token එක හරියට යනවාද බලන්න
+        
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
         const res = await api.get("/dashboard/stats", config);
         setStats(res.data);
