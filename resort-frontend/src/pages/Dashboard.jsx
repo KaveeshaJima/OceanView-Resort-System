@@ -45,14 +45,14 @@ export default function Dashboard() {
     </div>
   );
 
-  // Chart එකට data සකස් කිරීම - මෙතන දැන් අලුත් backend variables පාවිච්චි කරලා තියෙනවා
+  
   const pieData = [
     { name: "Available", value: stats?.availableRooms || 0 },
     { name: "Occupied", value: stats?.occupiedRooms || 0 },
   ];
   const COLORS = ["#10b981", "#ef4444"];
 
-  // Occupancy rate එක ගණනය කිරීම
+  
   const totalRooms = (stats?.availableRooms || 0) + (stats?.occupiedRooms || 0);
   const occupancyRate = totalRooms > 0 ? ((stats.occupiedRooms / totalRooms) * 100).toFixed(1) : 0;
 

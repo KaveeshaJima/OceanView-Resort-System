@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"; // useCallback අයින් කළා
+import { useEffect, useState } from "react"; 
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { UserPlus, Edit, Trash2, X, ShieldCheck, Mail, UserCircle } from "lucide-react";
@@ -33,24 +33,23 @@ export default function Users() {
   useEffect(() => {
     fetchUsers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentUser?.token]); // token එක වෙනස් වුණොත් විතරක් run වෙනවා
+  }, [currentUser?.token]); 
 
   // ================= SAVE/UPDATE =================
   const handleSave = async (e) => {
   e.preventDefault();
 
-  // Backend එකේ DTO එකට ඕන වෙන්නේ මේ ටික විතරයි නම්, මේවා විතරක් යවමු
-  // Body එකේ 'id' එක යැවීම නිසා 400 Error එක එන්න පුළුවන්
+  
   const userRequestData = {
     name: formData.name,
     email: formData.email,
-    password: formData.password || null, // Password එක හිස් නම් null යවමු
+    password: formData.password || null, 
     role: formData.role
   };
 
   try {
     if (isEdit) {
-      // PUT Request: ID එක යන්නේ URL එකේ විතරයි
+      
       await api.put(`/users/${formData.id}`, userRequestData, {
         headers: { Authorization: `Bearer ${currentUser.token}` }
       });
@@ -66,7 +65,7 @@ export default function Users() {
     resetForm();
     fetchUsers();
   } catch (error) {
-    // ඇත්තම වැරැද්ද බලාගන්න මෙන්න මේක පාවිච්චි කරන්න
+   
     console.error("Backend Error Response:", error.response?.data);
     alert(error.response?.data?.message || "Operation failed!");
   }

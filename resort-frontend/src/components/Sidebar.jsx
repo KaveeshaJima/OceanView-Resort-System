@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; // මේ import එක විතරක් තියන්න
+import { useAuth } from "../context/AuthContext"; 
 import { LayoutDashboard, BedDouble, CalendarCheck, Users, LogOut } from "lucide-react";
 
 export default function Sidebar() {
-  const { user, logout } = useAuth(); // useContext(AuthContext) පාවිච්චි කරන්න එපා
+  const { user, logout } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLogout = () => {

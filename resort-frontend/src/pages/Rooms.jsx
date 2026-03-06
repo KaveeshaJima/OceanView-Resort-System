@@ -77,8 +77,8 @@ export default function Rooms() {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         setRooms((prev) => prev.filter((r) => r.roomNo !== roomNo));
-      } catch (error) { // මෙතන error පාවිච්චි කරනවා
-        console.error("Delete failed:", error); // අන්න දැන් warning එක එන්නේ නැහැ
+      } catch (error) { 
+        console.error("Delete failed:", error); 
         alert("Delete failed!");
       }
     }
