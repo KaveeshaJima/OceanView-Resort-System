@@ -53,15 +53,15 @@ export default function Reservations() {
     try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
         
-        // 1. Backend එකට delete request එක යවනවා (දැන් backend එක room එකත් update කරනවා)
+        
         await api.delete(`/reservations/${id}`, config);
         
         alert("Reservation Deleted Successfully!");
 
-        // 2. UI එකේ පේන Reservations list එකෙන් මේක අයින් කරනවා
+        
         setReservations(prev => prev.filter(res => res.resId !== id));
 
-        // 3. වැදගත්ම දේ: අලුත් Room Status ටික දැනගන්න rooms list එක refresh කරනවා
+        
         const roomRes = await api.get("/rooms", config);
         setRooms(roomRes.data);
 
