@@ -160,7 +160,7 @@ export default function Reservations() {
       </div>
 
       {/* Table Section */}
-      <div className="bg-white shadow-sm rounded-[2rem] overflow-hidden border border-gray-100">
+      <div className="bg-white shadow-sm rounded-4xl overflow-hidden border border-gray-100">
         <table className="w-full text-left">
           <thead className="bg-gray-50/50 border-b border-gray-100 text-[11px] uppercase tracking-widest text-gray-400 font-black">
             <tr>
@@ -241,7 +241,7 @@ export default function Reservations() {
                 </div>
               </div>
               
-              <div className="bg-slate-900 p-6 rounded-[2rem] flex justify-between items-center text-white mt-4">
+              <div className="bg-slate-900 p-6 rounded-4xl flex justify-between items-center text-white mt-4">
                 <div className="flex items-center gap-4">
                   <Calculator size={24} className="text-blue-400"/>
                   <div>
@@ -265,7 +265,7 @@ export default function Reservations() {
 
       {/* --- Quick Add Guest Modal --- */}
       {showGuestModal && (
-        <div className="fixed inset-0 bg-slate-900/70 backdrop-blur-md flex items-center justify-center p-4 z-[60]">
+        <div className="fixed inset-0 bg-slate-900/70 backdrop-blur-md flex items-center justify-center p-4 z-60">
           <div className="bg-white p-10 rounded-[3rem] w-full max-w-md shadow-2xl relative">
             <h3 className="text-2xl font-black mb-6 text-gray-800 uppercase italic">Add Guest</h3>
             <form onSubmit={handleQuickGuestAdd} className="space-y-4">
